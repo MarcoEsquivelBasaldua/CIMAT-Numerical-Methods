@@ -1,0 +1,15 @@
+set terminal x11
+set grid
+set title "Gregory-Newton Forward Interpolation"
+set xlabel "x axis"
+set ylabel "y axis"
+
+plot "Exit points.txt" using 1:2 title "f(x)" with lines, \
+         "Exit points.txt" using 1:3 title "Pn(x)" with lines, \
+		"Interpolation points.txt" using 1:2 title "Int points" with points pointtype 20
+     
+set terminal png nocrop enhanced size 1380,960
+set output "Gregory-Newton Forward Interpolation.png"
+replot
+set terminal x11
+set output 

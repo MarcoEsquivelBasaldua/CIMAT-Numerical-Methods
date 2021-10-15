@@ -1,0 +1,14 @@
+set terminal x11
+set grid
+set title "Newton-Raphson Method"
+set xlabel "x axis"
+set ylabel "y axis"
+
+plot "f_x.txt" using 1:2 title "f(x)" with lines, \
+         "roots.txt" using 1:2 title "Roots" with points pointtype 20
+     
+set terminal png nocrop enhanced size 460,320
+set output "Newton-Raphson Method.png"
+replot
+set terminal x11
+set output 

@@ -1,0 +1,14 @@
+set terminal x11
+set grid
+set title "Linear Regression"
+set xlabel "x axis"
+set ylabel "y axis"
+
+plot "3x+2.txt" using 1:2 title "y" with points pointtype 20, \
+         "Exit points.txt" using 1:2 title "g(x)" with lines
+     
+set terminal png nocrop enhanced size 1380,960
+set output "Linear Regression.png"
+replot
+set terminal x11
+set output 

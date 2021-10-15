@@ -1,0 +1,13 @@
+set terminal x11
+set grid
+set title "Execution Time"
+set xlabel "Number of Threads"
+set ylabel "Time (seconds)"
+
+plot "Results.txt" using 1:2 title "thread vs time" with lines,
+     
+set terminal png nocrop enhanced size 460,320
+set output "Sum of Vectors.png"
+replot
+set terminal x11
+set output 
